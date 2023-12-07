@@ -5,7 +5,8 @@ const initialState = {
   cars: [],
   isLoading: false,
   error: null,
-  filter: ""
+  filter: "",
+  displayedCars: 12,
 };
 
 const handlePending = (state) => {
@@ -25,7 +26,11 @@ const handleFulfilled = (state) => {
 const fetchAllAdverts = (state, { payload }) => {
   state.isLoading = false;
   state.cars = payload;
-}
+};
+
+const loadMoreAdverts = (state) => {
+  state.displayedCars = state.cars.length;
+};
 
 const carsSlice = createSlice({
   name: 'adverts',
@@ -33,7 +38,10 @@ const carsSlice = createSlice({
   reducers: {
     updateFilter(state, action) {
       state.filter = action.payload;
-    }
+    },
+    loadMore(state) {
+      loadMoreAdverts(state);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -49,9 +57,9 @@ const carsSlice = createSlice({
       .addMatcher(
         (action) => action.type.endsWith('/fulfilled'),
         handleFulfilled
-      )
-  }
+      );
+  },
 });
 
 export default carsSlice.reducer;
-export const { updateFilter } = carsSlice.actions;
+export const { updateFilter, loadMore } = carsSlice.actions;

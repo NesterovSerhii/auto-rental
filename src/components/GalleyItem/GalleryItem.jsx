@@ -50,14 +50,14 @@ if (match) {
           <span className={css.verticalLine}></span>
           <li>{car.rentalCompany}</li>
           {rentalPriceNumber >= 30 && <p>Premium</p>}
-          {/* <span className={css.verticalLine}></span> */}
+          <span className={css.verticalLine}></span>
           <li>{car.type}</li>
           <span className={css.verticalLine}></span>
           <li>{car.model}</li>
           <span className={css.verticalLine}></span>
           <li>{car.mileage}</li>
           <span className={css.verticalLine}></span>
-          <li>{car.accessories[2]}</li>
+          <li>{car.accessories[1]}</li>
           </ul>
 
         </div>

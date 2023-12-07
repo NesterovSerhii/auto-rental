@@ -1,0 +1,20 @@
+.galleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
+  width: calc((274px + 29px) * 4);
+  gap: 50px 29px;
+  justify-content: center;
+}
+.loadMoreBtn {
+  width: 79px;
+  color: #3470ff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cardBtn:hover,
+.cardBtn:focus {
+  color: #0b44cd;
+}

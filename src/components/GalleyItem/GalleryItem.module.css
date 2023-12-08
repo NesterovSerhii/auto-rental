@@ -1,11 +1,16 @@
 .card {
   width: 274px;
 }
-
-.image {
+.imgWrap {
   width: 274px;
-  height: auto;
-  object-fit: scale-down;
+  height: 278px;
+  overflow: hidden;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 14px;
 }
 .details {
@@ -19,7 +24,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 270px;
-  /* gap: 6px;   */
 
   font-size: 12px;
   font-weight: 400;
@@ -34,7 +38,7 @@
   width: 1px;
   background-color: #1214171a;
   display: inline-block;
-  margin: 0 6px; /* Відстань між полосами та текстом */
+  margin: 0 6px;
 }
 .additionalInfoList {
   display: flex;
@@ -42,8 +46,6 @@
   list-style: none;
   padding-left: 10px;
   gap: 4px;
-  /* height: 40px; */
-  /* width: 270px; */
 }
 .cardBtn {
   width: 274px;

@@ -6,6 +6,7 @@
   width: calc((274px + 29px) * 4);
   gap: 50px 29px;
   justify-content: center;
+  margin-top: 20px;
 }
 .loadMoreBtn {
   width: 79px;

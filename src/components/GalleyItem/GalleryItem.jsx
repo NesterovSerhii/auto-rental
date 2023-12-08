@@ -1,18 +1,8 @@
-import React, { useState } from 'react';
-// import Modal from '../Modal/Modal';
+import React from 'react';
 import css from './GalleryItem.module.css';
 
-export function GalleryItem({ car }) {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
-  };
-
+export const GalleryItem = ({ car }) => {
+ 
 const cityRegex = /,\s*([^,]+),\s*([^,]+)$/; 
 
   const match = car.address.match(cityRegex);
@@ -34,7 +24,7 @@ if (match) {
 
   return (
     <>
-      <div className={css.card} onClick={handleOpenModal}>
+      <div className={css.card} >
         <div className={css.imgWrap}>
         <img className={css.image} src={car.img} alt={car.make + ' ' + car.model} />
         </div>
@@ -63,8 +53,7 @@ if (match) {
         </div>
         <button className={css.cardBtn}>Learn more</button>
       </div>
-      {/* Модальне вікно. Розкоментуйте, якщо ви використовуєте Modal */}
-      {/* <Modal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
+      
     </>
   );
 }

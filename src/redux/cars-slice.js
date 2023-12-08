@@ -6,7 +6,6 @@ const initialState = {
   isLoading: false,
   error: null,
   filter: "",
-  displayedCars: 12,
 };
 
 const handlePending = (state) => {
@@ -28,9 +27,6 @@ const fetchAllAdverts = (state, { payload }) => {
   state.cars = payload;
 };
 
-const loadMoreAdverts = (state) => {
-  state.displayedCars = state.cars.length;
-};
 
 const carsSlice = createSlice({
   name: 'adverts',
@@ -38,9 +34,6 @@ const carsSlice = createSlice({
   reducers: {
     updateFilter(state, action) {
       state.filter = action.payload;
-    },
-    loadMore(state) {
-      loadMoreAdverts(state);
     },
   },
   extraReducers: (builder) => {
@@ -62,4 +55,4 @@ const carsSlice = createSlice({
 });
 
 export default carsSlice.reducer;
-export const { updateFilter, loadMore } = carsSlice.actions;
+export const { updateFilter } = carsSlice.actions;

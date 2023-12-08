@@ -8,7 +8,8 @@ export const fetchAdverts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get("/cars");
-      return response.data;
+      const first12Adverts = response.data.slice(0, 12);
+      return first12Adverts;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.response.data);
     }

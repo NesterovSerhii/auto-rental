@@ -12,7 +12,7 @@ const CatalogPage = () => {
   if (!isLoading) {
     dispatch(fetchAdverts());
   }
-},[dispatch] );
+},[] );
 
   return (
     <div>

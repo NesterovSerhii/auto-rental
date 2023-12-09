@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import css from './GalleryItem.module.css';
+import Icon from '../Icon/Icon';
+
 
 export const GalleryItem = ({ car }) => {
+const [isButtonClicked, setIsButtonClicked] = useState(false);
  
 const cityRegex = /,\s*([^,]+),\s*([^,]+)$/; 
 
@@ -20,13 +23,22 @@ if (match) {
 
   const rentalPriceString = car.rentalPrice;
   const rentalPriceNumber = parseFloat(rentalPriceString.replace(/[^0-9.]/g, ''));
-  
+
+  const handleButtonClick = () => {
+    setIsButtonClicked(!isButtonClicked);
+  };
 
   return (
     <>
       <div className={css.card} >
         <div className={css.imgWrap}>
-        <img className={css.image} src={car.img} alt={car.make + ' ' + car.model} />
+          <img className={css.image} src={car.img} alt={car.make + ' ' + car.model} />
+          <button type="button"
+            className={css.iconWrap} onClick={handleButtonClick}>
+            <Icon className={`${css.icon} ${isButtonClicked ? css.blueIcon : ''}`}
+              fill={isButtonClicked ? '#3470ff' : 'none'}
+              stroke={isButtonClicked ? '#3470ff' : '#fff'} />
+          </button>
         </div>
         <div className={css.details}>
           <h3>{car.make} {car.model}, {car.year}</h3>
@@ -47,7 +59,7 @@ if (match) {
           <span className={css.verticalLine}></span>
           <li>{car.mileage}</li>
           <span className={css.verticalLine}></span>
-          <li>{car.accessories[1]}</li>
+          <li>{car.accessories[0]}</li>
           </ul>
 
         </div>

@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 859px;
+  gap: 18px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.brandSelect {
+  width: 224px;
+  height: 48px;
+
+  font-size: 18px;
+  line-height: 20px;
+  padding: 14px 18px;
+  border: none;
+  border-color: transparent;
+  border-radius: 14px;
+  background-color: #f7f7fb;
+}
+.brandSelect ::placeholder {
+  background: #374151;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: '20px';
+  border: none;
+  border-radius: 14px;
+  padding: 6px 8px;
+  font-weight: 500;
+}
+.priceSelect {
+  width: 125px;
+  height: 48px;
+
+  font-size: 18px;
+  line-height: 20px;
+  padding: 14px 18px;
+  border: none;
+  border-color: transparent;
+  border-radius: 14px;
+  background-color: #f7f7fb;
+}

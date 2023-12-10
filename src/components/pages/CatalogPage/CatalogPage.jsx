@@ -7,13 +7,16 @@ import {
   updateSelectedCar,
   updateHourlyRate,
   updateMileageFrom,
-  updateMileageTo
+  updateMileageTo,
+  updatePage,
 } from '../../../redux/filter-slice.js';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.adverts.cars);
   const filters = useSelector((state) => state.filters);
+  const page = useSelector((state) => state.filters.page);
+
 
   const handleSearch = (newFilters) => {
     dispatch(updateSelectedCar(newFilters.selectedCar));
@@ -21,16 +24,24 @@ const CatalogPage = () => {
     dispatch(updateMileageFrom(newFilters.mileageFrom));
     dispatch(updateMileageTo(newFilters.mileageTo));
     dispatch(fetchAdverts(newFilters));
+    dispatch(updatePage(1));
+    dispatch(fetchAdverts({ ...newFilters, page: 1 }));
   };
 
-  useEffect(() => {
-    dispatch(fetchAdverts(filters));
-  }, [dispatch, filters]);
+  const handleLoadMore = () => {
+    dispatch(updatePage(page + 1)); 
+    dispatch(fetchAdverts({ ...filters, page: page + 1 }));
+  };
+
+   useEffect(() => {
+    dispatch(fetchAdverts({ ...filters, page }));
+  }, [dispatch, filters, page])
 
   return (
     <div>
       <SearchForm onSearch={handleSearch} />
       <Gallery cars={cars} renderAllImages={true} />
+      <button onClick={handleLoadMore}>Load more</button>
     </div>
   );
 };

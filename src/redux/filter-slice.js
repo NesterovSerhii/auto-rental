@@ -5,6 +5,7 @@ const initialState = {
   hourlyRate: '',
   mileageFrom: '',
   mileageTo: '',
+  page: 1,
 };
 
 const filtersSlice = createSlice({
@@ -26,6 +27,10 @@ const filtersSlice = createSlice({
     resetFilters: (state) => {
       return initialState;
     },
+    updatePage: (state, action) => {
+      state.page = action.payload;
+    },
+    
   },
 });
 
@@ -35,6 +40,7 @@ export const {
   updateMileageFrom,
   updateMileageTo,
   resetFilters,
+  updatePage,
 } = filtersSlice.actions;
 
 export default filtersSlice.reducer;

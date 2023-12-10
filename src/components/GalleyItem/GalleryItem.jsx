@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 import css from './GalleryItem.module.css';
 import Icon from '../Icon/Icon';
+import { useDispatch } from 'react-redux';
+import { removeFavorite, addFavorite,  } from '../../redux/favorites-slice';
 
 
 export const GalleryItem = ({ car }) => {
-const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const dispatch = useDispatch();
+const [isButtonClicked, setIsButtonClicked] = useState(
+    () => localStorage.getItem(`favorite-${car.id}`) === 'true'
+  );
  
 const cityRegex = /,\s*([^,]+),\s*([^,]+)$/; 
 
@@ -24,8 +29,15 @@ if (match) {
   const rentalPriceString = car.rentalPrice;
   const rentalPriceNumber = parseFloat(rentalPriceString.replace(/[^0-9.]/g, ''));
 
-  const handleButtonClick = () => {
+    const handleButtonClick = () => {
     setIsButtonClicked(!isButtonClicked);
+    localStorage.setItem(`favorite-${car.id}`, String(!isButtonClicked));
+
+    if (isButtonClicked) {
+      dispatch(removeFavorite(car));
+    } else {
+      dispatch(addFavorite(car));
+      }
   };
 
   return (

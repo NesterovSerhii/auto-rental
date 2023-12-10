@@ -16,7 +16,7 @@ const CatalogPage = () => {
 
   return (
     <div>
-      <Gallery cars={cars} />
+      <Gallery cars={cars}/>
     </div>
   );
 };

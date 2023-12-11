@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/auto-rental/static/css/main.df7643ac.css",
-    "main.js": "/auto-rental/static/js/main.d0984dd9.js",
+    "main.css": "/auto-rental/static/css/main.af64dca9.css",
+    "main.js": "/auto-rental/static/js/main.1d958f87.js",
     "static/media/homePageImage.webp": "/auto-rental/static/media/homePageImage.ead2e05e3ee9fff216ed.webp",
     "index.html": "/auto-rental/index.html",
-    "main.df7643ac.css.map": "/auto-rental/static/css/main.df7643ac.css.map",
-    "main.d0984dd9.js.map": "/auto-rental/static/js/main.d0984dd9.js.map"
+    "main.af64dca9.css.map": "/auto-rental/static/css/main.af64dca9.css.map",
+    "main.1d958f87.js.map": "/auto-rental/static/js/main.1d958f87.js.map"
   },
   "entrypoints": [
-    "static/css/main.df7643ac.css",
-    "static/js/main.d0984dd9.js"
+    "static/css/main.af64dca9.css",
+    "static/js/main.1d958f87.js"
   ]
 }

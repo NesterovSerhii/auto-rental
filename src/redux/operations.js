@@ -7,13 +7,13 @@ export const fetchAdverts = createAsyncThunk(
   "cars/fetchAll",
   async ({ filters, page = 1 }, thunkAPI) => {
     try {
-       const params = { ...filters, page, limit: 12 };
+      const params = { ...filters, page, limit: 12 };
       const response = await axios.get("/cars", { params });
       const fetchedAdverts = response.data;
 
-        const currentState = thunkAPI.getState();
+      const currentState = thunkAPI.getState();
       
-       const currentCards = currentState.adverts.cars;
+      const currentCards = currentState.adverts.cars;
 
       const updatedCards = [
         ...currentCards.filter((card) => !fetchedAdverts.find((newCard) => newCard.id === card.id)),

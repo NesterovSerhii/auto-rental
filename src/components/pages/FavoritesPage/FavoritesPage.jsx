@@ -12,8 +12,8 @@ const FavoritesPage = () => {
   };
 
   useEffect(() => {
-  dispatch(fetchAdverts());
-}, [favoriteCars, dispatch]);
+    dispatch(fetchAdverts());
+  }, [favoriteCars, dispatch]);
 
   return (
     <div>

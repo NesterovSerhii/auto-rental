@@ -1,110 +1,109 @@
 .modalOpen {
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
 
 .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 14
-;
-  }
-  
-  .modalContent {
-    background: #fff;
-    padding: 20px;
-    border-radius: 24px;
-    max-width: 541px;
-    max-height: 752px;
-    width: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .modalImage {
-    display: block;
-    width: 100%;
-    max-height: 314px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  
-  .modalDetails {
-    margin-top: 20px;
-  }
-  
-  .closeButton {
-    margin-top: 20px;
-    padding: 10px;
-    background: #3470ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .accent {
-    color: #3470ff;
-  }
-  .additionalInfoList {
-    color: rgba(18, 20, 23, 0.50);;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding-left: 0;
-    height: 40px;         
-    margin: 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
-    width: 299px;
-  }
-
-  .verticalLine {
-    height: 16px;
-    width: 1px;
-    background-color: #1214171a;
-    display: inline-block;
-    margin: 0 6px;
-  }
-  .cardTitle {
-    margin: 15px 0 3px 0;
-  }
-.cardSubTitle {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.43;
-    margin-bottom: 8px;
-    margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 14;
 }
-  .description {
-   color: #121417;
-   font-weight: 400;
-   font-size: 14px;
-   line-height: 1.42;
-   margin: 14px 0 24px 0;
 
+.modalContent {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 541px;
+  max-height: 752px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-  }
-  .functionalitiesList {
-    color: rgba(18, 20, 23, 0.50);;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    width: 461px;
-    padding-left: 0;
-    height: 40px;         
-    margin: 0 0 24px 0;
-    font-size: 12px;
-    line-height: 1.5;
-    gap: 4px 0;
-  }
+.modalImage {
+  display: block;
+  width: 100%;
+  max-height: 314px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
-  .rentalConditionsList {
+.modalDetails {
+  margin-top: 20px;
+}
+
+.closeButton {
+  margin-top: 20px;
+  padding: 10px;
+  background: #3470ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.accent {
+  color: #3470ff;
+}
+.additionalInfoList {
+  color: rgba(18, 20, 23, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  height: 40px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 299px;
+}
+
+.verticalLine {
+  height: 16px;
+  width: 1px;
+  background-color: #1214171a;
+  display: inline-block;
+  margin: 0 6px;
+}
+.cardTitle {
+  margin: 15px 0 3px 0;
+}
+.cardSubTitle {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+.description {
+  color: #121417;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42;
+  margin: 14px 0 24px 0;
+}
+.functionalitiesList {
+  color: rgba(18, 20, 23, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 461px;
+  padding-left: 0;
+  height: 40px;
+  margin: 0 0 24px 0;
+  font-size: 12px;
+  line-height: 1.5;
+  gap: 4px 0;
+  overflow: hidden;
+}
+
+.rentalConditionsList {
   list-style: none;
   padding: 0;
   display: flex;
@@ -124,16 +123,9 @@
   align-items: center;
   gap: 8px;
   border-radius: 35px;
-  background: #F9F9F9;
-  margin-right: 8px; 
-  margin-bottom: 8px; 
-}
-
-.conditionBullet {
-  width: 10px;
-  height: 10px;
-  background-color: #3470FF;
-  border-radius: 50%;
+  background: #f9f9f9;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 .conditionText {
@@ -144,21 +136,42 @@
 }
 
 .blueText {
-    color: #3470FF;
-font-family: Montserrat;
-font-size: 12px;
-font-weight: 600;
-line-height: 1.5;
-letter-spacing: -0.24px;
+  color: #3470ff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
 }
 .rentalCarButton {
-    display: inline-block; 
-    padding: 12px 50px;
-    border-radius: 12px;
-   background: #3470FF;
+  display: inline-block;
+  padding: 12px 50px;
+  border-radius: 12px;
+  background: #3470ff;
+  text-decoration: none;
 
-color: #FFF;
-font-size: 14px;
-font-weight: 600;
-line-height: 1.43;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+
+  transition: background-color 0.3s ease;
+}
+
+.rentalCarButton:focus,
+.rentalCarButton:hover {
+  background-color: #0b44cd;
+}
+
+.closeButton {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 15;
+
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
 }

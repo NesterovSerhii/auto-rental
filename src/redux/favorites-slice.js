@@ -16,12 +16,12 @@ const favoritesSlice = createSlice({
   },
   reducers: {
     addFavorite: (state, action) => {
-          state.favoriteCars.push(action.payload);
-          saveFavorites(state.favoriteCars);
+      state.favoriteCars.push(action.payload);
+      saveFavorites(state.favoriteCars);
     },
     removeFavorite: (state, action) => {
-        state.favoriteCars = state.favoriteCars.filter((car) => car.id !== action.payload.id);
-        saveFavorites(state.favoriteCars);
+      state.favoriteCars = state.favoriteCars.filter((car) => car.id !== action.payload.id);
+      saveFavorites(state.favoriteCars);
     },
 
   },

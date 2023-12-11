@@ -30,11 +30,11 @@ const CatalogPage = () => {
   };
 
   const handleLoadMore = () => {
-    dispatch(updatePage(page + 1)); 
+    dispatch(updatePage(page + 1));
     dispatch(fetchAdverts({ ...filters, page: page + 1 }));
   };
 
-   useEffect(() => {
+  useEffect(() => {
     dispatch(fetchAdverts({ ...filters, page }));
   }, [dispatch, filters, page])
 

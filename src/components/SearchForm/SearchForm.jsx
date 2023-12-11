@@ -63,7 +63,7 @@ const SearchForm = ({ onSearch }) => {
   return (
     <div className={css.form}>
       <label>
-      Car brand
+        Car brand
         <select className={css.brandSelect} value={filters.selectedCar} onChange={handleCarChange}>
           <option value="">All Cars</option>
           {uniqueCarBrands.map((brand) => (
@@ -75,7 +75,7 @@ const SearchForm = ({ onSearch }) => {
       </label>
 
       <label>
-      Price/ 1 hour
+        Price/ 1 hour
         <select className={css.select} value={filters.hourlyRate} onChange={handleHourlyRateChange}>
           <option value="">To $</option>
           {uniqueHourlyRates.map((rate) => (
@@ -86,30 +86,30 @@ const SearchForm = ({ onSearch }) => {
         </select>
       </label>
       <div className={css.labelWrap}>
-      <label>
-      Сar mileage / km
-      </label>
-      <div className={css.inputWrap}>
-        <input className={css.inputLeft}
-          type="number"
-          placeholder={`From (${minMileage})`}
-          value={filters.mileageFrom}
-          min={Number(minMileage)}
-          step={10}
-          onChange={handleMileageFromChange}
-        />
-        <input
-          className={css.inputRight}
-          type="number"
-          placeholder={`To (${maxMileage})`}
-          value={filters.mileageTo}
-          min={filters.mileageFrom}
-          max={Number(maxMileage)}
-          step={10}
-          onChange={handleMileageToChange}
-        />
+        <label>
+          Сar mileage / km
+        </label>
+        <div className={css.inputWrap}>
+          <input className={css.inputLeft}
+            type="number"
+            placeholder={`From (${minMileage})`}
+            value={filters.mileageFrom}
+            min={Number(minMileage)}
+            step={10}
+            onChange={handleMileageFromChange}
+          />
+          <input
+            className={css.inputRight}
+            type="number"
+            placeholder={`To (${maxMileage})`}
+            value={filters.mileageTo}
+            min={filters.mileageFrom}
+            max={Number(maxMileage)}
+            step={10}
+            onChange={handleMileageToChange}
+          />
         </div>
-        </div>
+      </div>
       <button className={css.formBtn} type="button" onClick={handleSearch}>
         Search
       </button>

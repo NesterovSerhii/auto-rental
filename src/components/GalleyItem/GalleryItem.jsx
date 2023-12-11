@@ -115,7 +115,7 @@ if (match) {
           </ul>
 
         </div>
-        <button className={css.cardBtn} onClick={handleLearnMoreClick}>Learn more</button>
+        <button type='button' className={css.cardBtn} onClick={handleLearnMoreClick}>Learn more</button>
         {showModal && <CarModal car={car} onClose={closeModal} />}
       </div>
       

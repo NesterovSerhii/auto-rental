@@ -7,7 +7,7 @@ import FavoritesPage from  './pages/FavoritesPage/FavoritesPage.jsx'
 
 export const App = () => {
   return (
-    <Router>
+    <Router basename='/auto-rental'>
       <div>
         <Header />
         <Routes>

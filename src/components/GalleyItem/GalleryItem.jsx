@@ -3,17 +3,22 @@ import css from './GalleryItem.module.css';
 import Icon from '../Icon/Icon';
 import { useDispatch } from 'react-redux';
 import { removeFavorite, addFavorite,  } from '../../redux/favorites-slice';
+import CarModal from '../CarModal/CarModal';
 
 
 export const GalleryItem = ({ car }) => {
   const dispatch = useDispatch();
   const [isButtonClicked, setIsButtonClicked] = useState(
     () => localStorage.getItem(`favorite-${car.id}`) === 'true');
+    const strokeColor = isButtonClicked ? '#000' : '#3470ff';
+    document.documentElement.style.setProperty('--button-stroke-color', strokeColor);
   
     const [imgError, setImgError] = useState(false);
     const handleImgError = ()=> {
       setImgError(true);
     }
+
+    const [showModal, setShowModal] = useState(false);
  
 const cityRegex = /,\s*([^,]+),\s*([^,]+)$/; 
 
@@ -44,17 +49,45 @@ if (match) {
       }
   };
 
+  const handleLearnMoreClick = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
-      <div className={css.card} >
+      <div className={css.card}>
         <div className={css.imgWrap}>
-        {car.img && !imgError ? (<><img className={css.image} onError={handleImgError} src={car.img} alt={car.make + ' ' + car.model}/>
-          <button type="button"
-            className={css.iconWrap} onClick={handleButtonClick}>
-            <Icon className={`${css.icon} ${isButtonClicked ? css.blueIcon : ''}`}
+          {car.img && !imgError ? (
+            <>
+              <img
+                className={css.image}
+                onError={handleImgError}
+                src={car.img}
+                alt={car.make + ' ' + car.model}
+              />
+            </>
+          ) : (
+            imgError ? (
+              <div className={css.errorDiv}>Failed to load image</div>
+            ) : (
+              <div className={css.errorDiv}>No image</div>
+            )
+          )}
+          <button
+            type="button"
+            className={css.iconWrap}
+            onClick={handleButtonClick}
+          >
+            <Icon
+              className={`${css.icon} ${isButtonClicked ? css.blueIcon : ''}`}
               fill={isButtonClicked ? '#3470ff' : 'none'}
-              stroke={isButtonClicked ? '#3470ff' : '#fff'} />
-          </button></>) :(imgError ? <div className={css.errorDiv}>Failed to load image</div> : <div className={css.errorDiv}>No image</div>)}
+              stroke={(isButtonClicked && !imgError) ? '#3470ff' : 'var(--button-stroke-color)'}
+            />
+          </button>
         </div>
         <div className={css.details}>
         <h3 className={css.cardTitle}>
@@ -82,7 +115,8 @@ if (match) {
           </ul>
 
         </div>
-        <button className={css.cardBtn}>Learn more</button>
+        <button className={css.cardBtn} onClick={handleLearnMoreClick}>Learn more</button>
+        {showModal && <CarModal car={car} onClose={closeModal} />}
       </div>
       
     </>

@@ -1,3 +1,7 @@
+:root {
+  --button-stroke-color: #000; 
+}
+
 .card {
   width: 274px;
   height: 426px;
@@ -51,8 +55,10 @@
 }
 .cardTitlePrice {
   margin: 0;
+  font-weight: 500;
 }
 .additionalInfo {
+  color: rgba(18, 20, 23, 0.50);
   display: flex;
   flex-wrap: wrap;
   width: 270px;
@@ -62,9 +68,9 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .additionalInfoListEllipsis {

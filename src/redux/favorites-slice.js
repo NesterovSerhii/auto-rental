@@ -23,7 +23,6 @@ const favoritesSlice = createSlice({
       state.favoriteCars = state.favoriteCars.filter((car) => car.id !== action.payload.id);
       saveFavorites(state.favoriteCars);
     },
-
   },
 });
 

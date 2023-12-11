@@ -19,14 +19,12 @@ export const fetchAdverts = createAsyncThunk(
         ...currentCards.filter((card) => !fetchedAdverts.find((newCard) => newCard.id === card.id)),
         ...fetchedAdverts,
       ];
-
       return updatedCards;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.response.data);
     }
   }
 );
-
 
 export const fetchBrends = createAsyncThunk(
   "cars/fetchBrands",

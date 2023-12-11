@@ -30,7 +30,6 @@ const filtersSlice = createSlice({
     updatePage: (state, action) => {
       state.page = action.payload;
     },
-    
   },
 });
 

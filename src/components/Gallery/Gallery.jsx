@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { GalleryItem } from '../GalleyItem/GalleryItem.jsx';
+import { GalleryItem } from '../GalleryItem/GalleryItem.jsx';
 import css from './Gallery.module.css'
 export const Gallery = ({ cars, renderAllImages }) => {
   const selectedBrandCatalog = useSelector((state) => state.filters.selectedCar);

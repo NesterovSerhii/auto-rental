@@ -1,5 +1,6 @@
 .card {
   width: 274px;
+  height: 426px;
   position: relative;
 }
 .imgWrap {
@@ -40,18 +41,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 14px 0 8px 0; 
 }
-
+.cardTitle {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cardTitlePrice {
+  margin: 0;
+}
 .additionalInfo {
   display: flex;
   flex-wrap: wrap;
   width: 270px;
+  max-height: 40px;
+  margin-bottom: 28px;
 
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
+.additionalInfoListEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .additionalInfo p {
   display: inline-block;
   margin: 0;
@@ -68,7 +89,11 @@
   flex-wrap: wrap;
   list-style: none;
   padding-left: 10px;
+  height: 40px;
   gap: 4px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cardBtn {
   width: 274px;
@@ -85,4 +110,15 @@
 .cardBtn:hover,
 .cardBtn:focus {
   background-color: #0b44cd;
+}
+
+.errorDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+.accent {
+  color: #3470FF;
 }

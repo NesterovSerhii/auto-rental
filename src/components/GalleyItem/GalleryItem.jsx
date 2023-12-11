@@ -7,9 +7,13 @@ import { removeFavorite, addFavorite,  } from '../../redux/favorites-slice';
 
 export const GalleryItem = ({ car }) => {
   const dispatch = useDispatch();
-const [isButtonClicked, setIsButtonClicked] = useState(
-    () => localStorage.getItem(`favorite-${car.id}`) === 'true'
-  );
+  const [isButtonClicked, setIsButtonClicked] = useState(
+    () => localStorage.getItem(`favorite-${car.id}`) === 'true');
+  
+    const [imgError, setImgError] = useState(false);
+    const handleImgError = ()=> {
+      setImgError(true);
+    }
  
 const cityRegex = /,\s*([^,]+),\s*([^,]+)$/; 
 
@@ -44,20 +48,23 @@ if (match) {
     <>
       <div className={css.card} >
         <div className={css.imgWrap}>
-          <img className={css.image} src={car.img} alt={car.make + ' ' + car.model} />
+        {car.img && !imgError ? (<><img className={css.image} onError={handleImgError} src={car.img} alt={car.make + ' ' + car.model}/>
           <button type="button"
             className={css.iconWrap} onClick={handleButtonClick}>
             <Icon className={`${css.icon} ${isButtonClicked ? css.blueIcon : ''}`}
               fill={isButtonClicked ? '#3470ff' : 'none'}
               stroke={isButtonClicked ? '#3470ff' : '#fff'} />
-          </button>
+          </button></>) :(imgError ? <div className={css.errorDiv}>Failed to load image</div> : <div className={css.errorDiv}>No image</div>)}
         </div>
         <div className={css.details}>
-          <h3>{car.make} {car.model}, {car.year}</h3>
-          <p>{car.rentalPrice}</p>
+        <h3 className={css.cardTitle}>
+  {car.make}{' '}
+  <span className={css.accent}>{car.model}</span>, {car.year}
+</h3>
+          <p className={css.cardTitlePrice}>{car.rentalPrice}</p>
         </div>
         <div className={css.additionalInfo}>
-          <ul className={css.additionalInfoList}>
+        <ul className={`${css.additionalInfoList} ${css.additionalInfoListEllipsis}`}>
           <li>{city}</li>
           <span className={css.verticalLine}></span>
           <li>{country}</li>

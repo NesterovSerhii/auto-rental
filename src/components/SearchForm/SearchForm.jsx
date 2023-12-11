@@ -41,6 +41,13 @@ const SearchForm = ({ onSearch }) => {
   };
 
   const handleResetFilters = () => {
+    setFilters({
+      selectedCar: '',
+      hourlyRate: '',
+      mileageFrom: '',
+      mileageTo: '',
+    });
+
     dispatch(resetFilters());
     dispatch(fetchAdverts());
   };

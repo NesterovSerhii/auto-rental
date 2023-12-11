@@ -9,6 +9,13 @@
   margin-left: auto;
 }
 
+label {
+color: #8A8A89;
+font-size: 14px;
+font-weight: 500;
+line-height: 1.29;
+}
+
 .brandSelect {
   width: 224px;
   height: 48px;
@@ -21,6 +28,26 @@
   border-radius: 14px;
   background-color: #f7f7fb;
 }
+
+.select {
+  width: 125px;
+  height: 48px;
+
+  font-size: 18px;
+  line-height: 20px;
+  padding: 14px 18px;
+  border: none;
+  border-color: transparent;
+  border-radius: 14px;
+  background-color: #f7f7fb;
+}
+
+.brandSelect:hover,
+.brandSelect:focus, .select:hover, .select:focus {
+  border: none;
+  border-color: transparent;
+}
+
 .brandSelect ::placeholder {
   background: #374151;
   cursor: pointer;
@@ -31,6 +58,7 @@
   padding: 6px 8px;
   font-weight: 500;
 }
+
 .priceSelect {
   width: 125px;
   height: 48px;
@@ -42,4 +70,85 @@
   border-color: transparent;
   border-radius: 14px;
   background-color: #f7f7fb;
+}
+
+.labelWrap{
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.inputLeft {
+  padding-left: 24px;
+  width: 120px;
+  height: 48px;
+  border: none;
+  border-radius: 14px 0px 0px 14px;
+  border-right: 1px solid rgba(138, 138, 137, 0.20);
+
+  background-color: #F7F7FB;
+}
+.inputLeft::placeholder,
+.inputRight::placeholder,
+.inputLeft::-webkit-input-placeholder,
+.inputRight::-webkit-input-placeholder {
+  color: #121417;
+
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11
+}
+
+.inputRight {
+  padding-left: 24px;
+  width: 160px;
+  height: 48px;
+  border: none;
+  border-radius: 0px 14px 14px 0px;
+  background-color: #F7F7FB;
+  color: #121417;
+}
+
+
+.formBtn {
+  width: 136px;
+  height: 48px;
+  padding: 14px 44px;
+  border: none;
+  border-radius: 12px;
+ background-color: #3470FF;
+ color: #fff;
+ cursor: pointer;
+ margin-top: 19px;
+ transition: background-color 0.3s ease;
+}
+
+.formBtn:hover,
+.formBtn:focus {
+  background-color: #0B44CD;
+}
+
+
+.formResetBtn {
+  width: 136px;
+  height: 48px;
+  padding: 4px 30px;
+  border: none;
+  border-radius: 12px;
+ background-color: #3470FF;
+ color: #fff;
+ cursor: pointer;
+ margin-top: 19px;
+ transition: background-color 0.3s ease;
+}
+
+.formResetBtn:hover,
+.formResetBtn:focus {
+  background-color: #0B44CD;
 }

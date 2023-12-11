@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {resetFilters} from '../../redux/filter-slice';
 import { fetchAdverts, fetchBrends } from '../../redux/operations';
-
+import css from './SearchForm.module.css'
 const SearchForm = ({ onSearch }) => {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.adverts.cars);
@@ -54,10 +54,10 @@ const SearchForm = ({ onSearch }) => {
   }, [dispatch, selectedCar, hourlyRate, mileageFrom, mileageTo]);
 
   return (
-    <div>
+    <div className={css.form}>
       <label>
-        Car:
-        <select value={filters.selectedCar} onChange={handleCarChange} className="car-dropdown">
+      Car brand
+        <select className={css.brandSelect} value={filters.selectedCar} onChange={handleCarChange}>
           <option value="">All Cars</option>
           {uniqueCarBrands.map((brand) => (
             <option key={brand} value={brand}>
@@ -68,9 +68,9 @@ const SearchForm = ({ onSearch }) => {
       </label>
 
       <label>
-        Hourly Rate ($):
-        <select value={filters.hourlyRate} onChange={handleHourlyRateChange}>
-          <option value="">All Rates</option>
+      Price/ 1 hour
+        <select className={css.select} value={filters.hourlyRate} onChange={handleHourlyRateChange}>
+          <option value="">To $</option>
           {uniqueHourlyRates.map((rate) => (
             <option key={rate} value={rate}>
               {rate}
@@ -78,27 +78,35 @@ const SearchForm = ({ onSearch }) => {
           ))}
         </select>
       </label>
-
+      <div className={css.labelWrap}>
       <label>
-        Mileage Range:
-        <input
+      Сar mileage / km
+      </label>
+      <div className={css.inputWrap}>
+        <input className={css.inputLeft}
           type="number"
           placeholder={`From (${minMileage})`}
           value={filters.mileageFrom}
+          min={Number(minMileage)}
+          step={10}
           onChange={handleMileageFromChange}
         />
         <input
+          className={css.inputRight}
           type="number"
           placeholder={`To (${maxMileage})`}
           value={filters.mileageTo}
+          min={filters.mileageFrom}
+          max={Number(maxMileage)}
+          step={10}
           onChange={handleMileageToChange}
         />
-      </label>
-
-      <button type="button" onClick={handleSearch}>
+        </div>
+        </div>
+      <button className={css.formBtn} type="button" onClick={handleSearch}>
         Search
       </button>
-      <button type="button" onClick={handleResetFilters}>
+      <button className={css.formResetBtn} type="button" onClick={handleResetFilters}>
         Reset Filters
       </button>
     </div>

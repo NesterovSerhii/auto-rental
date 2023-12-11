@@ -17,7 +17,6 @@ const FavoritesPage = () => {
 
   return (
     <div>
-      <h2>Favorites</h2>
       <SearchForm onSearch={handleSearch} />
       <Gallery cars={favoriteCars} />
     </div>

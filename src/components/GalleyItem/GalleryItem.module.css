@@ -50,6 +50,7 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+  text-overflow: ellipsis;
 }
 .additionalInfo p {
   display: inline-block;

@@ -10,6 +10,7 @@ import {
   updateMileageTo,
   updatePage,
 } from '../../../redux/filter-slice.js';
+import css from './CatalogPage.module.css'
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ const CatalogPage = () => {
     <div>
       <SearchForm onSearch={handleSearch} />
       <Gallery cars={cars} renderAllImages={true} />
-      <button onClick={handleLoadMore}>Load more</button>
+      <button className={css.loadMoreBtn} onClick={handleLoadMore}>Load more</button>
     </div>
   );
 };
